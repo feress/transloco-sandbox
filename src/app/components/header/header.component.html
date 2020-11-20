@@ -1,0 +1,17 @@
+<header class="d-flex justify-content-between py-2" *transloco="let t">
+  <div>
+    <h1>{{ t('Title') }}</h1>
+  </div>
+  <div>
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-secondary" [ngClass]="{'active': selectedLanguage == 'en-GB'}">
+        <input type="radio" name="selectedLanguage" autocomplete="off" value="en-GB"
+               [(ngModel)]="selectedLanguage" (change)="changeLanguage($event)">EN
+      </label>
+      <label class="btn btn-secondary" [ngClass]="{'active': selectedLanguage == 'de-DE'}">
+        <input type="radio" name="selectedLanguage" autocomplete="off" value="de-DE"
+               [(ngModel)]="selectedLanguage" (change)="changeLanguage($event)">DE
+      </label>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,16 @@
+{
+  "Title": "Hello, world!",
+  "BasicExamples": {
+    "StructuralDirective": "Using a structural directive is the recommended approach.",
+    "Attributes": "You can even add parameters: {{comment}}",
+    "Pipe": "The second option is to use the transloco pipe.",
+    "AttributeDirective": "The last option is to use transloco attribute directive.",
+    "Markup": "I am <b>Groot</b> 🌱",
+    "Service": "Use the Translation API in your services."
+  },
+  "MessageFormatExamples": {
+    "CustomerGender": "{gender, select, male {He} female {She} other {One}}",
+    "AppleCount": "{count, plural, =0 {no apples} one {an apple} other {# apples}}",
+    "OrderSummary": "{{MessageFormatExamples.CustomerGender}} would like to eat {{MessageFormatExamples.AppleCount}}."
+  }
+}

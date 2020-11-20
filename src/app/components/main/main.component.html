@@ -1,0 +1,42 @@
+<ng-container *transloco="let t">
+  <h3>Basis Usage</h3>
+  <ul>
+    <li>{{ t('BasicExamples.StructuralDirective') }}</li>
+    <li>{{ t('BasicExamples.Attributes', {comment: 'Yeah 😎'}) }}</li>
+    <li>{{ 'BasicExamples.Pipe' | transloco }}</li>
+    <li transloco="BasicExamples.AttributeDirective"></li>
+    <li [innerHtml]="'BasicExamples.Markup' | transloco"></li>
+    <li>{{myTranslatedText | async}}</li>
+  </ul>
+
+  <h3>Message Format</h3>
+  <div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="select-apple-recipient">Gender</label>
+        <select class="form-control" id="select-apple-recipient" [(ngModel)]="selectedGender">
+          <option value="" disabled>Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="input-apple-number">Number of apples 🍎</label>
+        <input type="number" [(ngModel)]="appleCount"
+               class="form-control" id="input-apple-number"
+               min="0"
+               placeholder="Enter number of apples"/>
+      </div>
+    </div>
+  </div>
+  <ng-container *ngIf="selectedGender && appleCount !== undefined;else formWarn">
+    <div class="alert alert-primary" role="alert" *transloco="let t">
+      {{ t('MessageFormatExamples.OrderSummary', {count: appleCount, gender: selectedGender}) }}
+    </div>
+  </ng-container>
+  <ng-template #formWarn>
+    <div class="alert alert-warning" role="alert">
+      Form incomplete.
+    </div>
+  </ng-template>
+</ng-container>

@@ -1,0 +1,16 @@
+{
+  "Title": "Hallo Welt!",
+  "BasicExamples": {
+    "StructuralDirective": "Die Strukturrichtlinie wird empfohlen.",
+    "Attributes": "Funktioniert auch mit Parametern: {{comment}}",
+    "Pipe": "Die Transloco Pfeife ist die zweite Option.",
+    "AttributeDirective": "Die letzte Möglichkeit ist die Verwendung der transloco-Attribut-Richtlinie.",
+    "Markup": "Ich bin <b>Groot</b> 🌱",
+    "Service": "Verwenden Sie die Übersetzungs-API in Ihren Diensten."
+  },
+  "MessageFormatExamples": {
+    "CustomerGender": "{gender, select, male {Er} female {Sie} other {Et}}",
+    "AppleCount": "{count, plural, =0 {keinen Apfel} one {einen Apfel} other {# Äpfel}}",
+    "OrderSummary": "{{MessageFormatExamples.CustomerGender}} möchte {{MessageFormatExamples.AppleCount}} essen."
+  }
+}
